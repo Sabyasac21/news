@@ -1,0 +1,15 @@
+
+
+.filter-wrapper option{
+    font-size: 20px;
+    margin: 150px 0;
+    margin-top: 1rem;
+    height: 3rem;
+}
+
+.filter-wrapper select{
+    font-size: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: .5rem;
+
+}
