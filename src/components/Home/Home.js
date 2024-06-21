@@ -64,7 +64,7 @@ const Home = () => {
   useEffect(() => {
     fetchNews();
     window.scrollTo(0, 0);
-  }, [category, page, fetchNews]);
+  }, [category, page]);
 
 
   return (
