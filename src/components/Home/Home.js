@@ -1,8 +1,13 @@
+import cors from 'cors'
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import FilterSections from "../FilterSections/FilterSections";
 import Loader from "../Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
+
+
+
+
 import {
   setCategory,
   setPage,
@@ -16,7 +21,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const apiKey = "bca8ff9cba22478ab3e3a87652dde644";
+  const apiKey = "863ff2729fdf4b37bc08dc0d6f94a342";
   const url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=10&apiKey=${apiKey}`;
 
   const openBackdrop = useSelector((state) => state.category.showBackDrop);
@@ -45,8 +50,10 @@ const Home = () => {
     fetch(url, {
       method: "GET",
       headers: {
-        "x-api-key": apiKey,
+        // "Access-Control-Allow-Origin": "*"
       },
+
+      
     })
       .then((response) => {
         if (!response.ok) {
