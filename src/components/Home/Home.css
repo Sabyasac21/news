@@ -125,8 +125,6 @@ hr{
 }
 
 .filter-list{
-    font-size: 25px;
-    font-weight: 600;
     text-align: left;
 
 }
@@ -134,7 +132,8 @@ hr{
     color:  rgb(41, 3, 78);
 }
 .filter{
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 600;
     list-style: none;
     padding: 1rem 1rem;
     margin-right: 3rem;

@@ -11,8 +11,9 @@ const Home = () => {
   const category = useSelector((state) => state.category.category);
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
-  const url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=10`;
   const apiKey = "bca8ff9cba22478ab3e3a87652dde644";
+  const url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=10&apiKey=${apiKey}`;
+  
   const openBackdrop = useSelector(state=>state.category.showBackDrop)
   // const [news, setNews] = useState([
   //   {
