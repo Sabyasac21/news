@@ -25,7 +25,6 @@ const Home = () => {
       method: "GET",
       headers: {
         "x-api-key": apiKey,
-        "Access-Control-Allow-Origin": "*"
       },
     })
       .then((response) => {
