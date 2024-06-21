@@ -1,7 +1,6 @@
 
 import './App.css';
 import Home from './components/Home/Home';
-import Loader from './components/Loader/Loader';
 import Nav from './components/Navbar/Nav';
 
 
@@ -10,7 +9,6 @@ function App() {
     <div className="App">
       <Nav/>
       <Home/>
-      {/* <Loader/> */}
     </div>
   );
 }
