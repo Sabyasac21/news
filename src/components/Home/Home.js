@@ -26,7 +26,7 @@ const Home = () => {
   const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&language=en&category=${category}`;
 
   const openBackdrop = useSelector((state) => state.category.showBackDrop);
-  let nextPage;
+  
 
   const handleNextPage = () => {
     dispatch(setPage(page + 1));
