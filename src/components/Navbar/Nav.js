@@ -10,11 +10,11 @@ const Nav = () => {
   const dispatch = useDispatch()
   const backdrop = useSelector((state)=>state.category.showBackdrop)
   
-  const handleKeyDown = (e)=>{
-    if (e.key==='Enter'){
-      dispatch(setCategory(e.target.value))
-    }
-  }
+  // const handleKeyDown = (e)=>{
+  //   if (e.key==='Enter'){
+  //     dispatch(setCategory(e.target.value))
+  //   }
+  // }
   const handleBackdrop = ()=>{
     dispatch(setShowBackdrop(!backdrop))
 
@@ -25,11 +25,11 @@ const Nav = () => {
         <div className='nav-logo'>
             <img src={logo} alt='logo'/>
         </div>
-        <div className='search' onKeyDown={handleKeyDown}>
+        {/* <div className='search' onKeyDown={handleKeyDown}>
           
           <div className='search-icon'><img src={searchIcon} alt='/'/></div>
           <input placeholder='Search for topics, places & sources' />
-        </div>
+        </div> */}
         <div className='nav-sections-wraper'>
             <div className='backdrop-icon' onClick={handleBackdrop}>
               <img src={nav_backdrop_icon} alt='/'/>

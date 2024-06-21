@@ -28,15 +28,24 @@
  text-align: left; 
  /* width: 70%; */
 }
+.news-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .image-news{
     height: 25rem;
+    width: 40rem;
+    /* margin-left: 7rem; */
+    
     padding: 60px 0;
     
     
 }
 .image-news img{
     height: 100%;
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
     
@@ -162,6 +171,7 @@ hr{
 
     .image-news{
         height: 10rem;
+        width: 20rem;
         padding: 1px 0;
     }
     .news-description{

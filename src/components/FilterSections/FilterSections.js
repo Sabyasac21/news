@@ -18,10 +18,10 @@ const FilterSections = () => {
       <select value={category} onChange={handleCategoryChange}>
       <option value=''>--Choose Category--</option>
         <option value='Technology'>Technology</option>
-        <option value='Science'>Science</option>
-        <option value='Business'>Business</option>
-        <option value='Market'>Market</option>
-        <option value='Breaking News'>Breaking News</option>
+        <option value='Education'>Education</option>
+        <option value='Entertainment'>Entertainment</option>
+        <option value='Tourism'>Tourism</option>
+        <option value='Science'>Science </option>
         <option value='Sports'>Sports</option>
       </select>
       
