@@ -9,10 +9,12 @@ import { useDispatch, useSelector } from "react-redux";
 // pub_469902c83babb4d28ed4ee7cbc9d203974296
 
 import {
+  setArticleTitle,
   setCategory,
   setPage,
   setShowBackdrop,
 } from "../../Redux/categorySlice";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [news, setNews] = useState([]);
@@ -22,7 +24,7 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const apiKey = "pub_46979f9018583c44b9a3d7368b78a6cbb3b1a";
+  const apiKey = "pub_469902c83babb4d28ed4ee7cbc9d203974296";
 
   const openBackdrop = useSelector((state) => state.category.showBackDrop);
 
@@ -36,12 +38,13 @@ const Home = () => {
     dispatch(setCategory(e.target.textContent));
     dispatch(setPage(1));
   };
-  const handlePrevPage = () => {
-    if (page > 1) dispatch(setPage(page - 1));
-  };
+  // const handlePrevPage = () => {
+  //   if (page > 1) dispatch(setPage(page - 1));
+  // };
 
-  const handleArticleClick = (url) => {
-    window.open(url, "_blank");
+  const handleArticleClick = (title) => {
+    dispatch(setArticleTitle(title))
+    window.scrollTo(0, 0)
   };
 
   useEffect(() => {
@@ -60,6 +63,8 @@ const Home = () => {
       })
       .then((data) => {
         setNews(data.results);
+        localStorage.removeItem('articles')
+        localStorage.setItem('articles', JSON.stringify(data.results))
         setNextPageUrl(data.nextPage);
         console.log(data);
         setIsLoading(false);
@@ -90,10 +95,12 @@ const Home = () => {
               return (
                 <>
                   {n.image_url && (
-                    <div
+                    <Link
+                    to='/detailedArticle'
                       className="news-card"
+                      style={{textDecoration:'none', color:'inherit'}}
                       key={i}
-                      onClick={() => handleArticleClick(n.link)}
+                      onClick={() => handleArticleClick(n.title)}
                     >
                       <div className="title">{n.title}</div>
                       <div className="image-news">
@@ -105,7 +112,7 @@ const Home = () => {
                           : "(CNN) — TikTok ramped up its attacks on the Biden administration Thursday over a law that could ban the popular app from the United States, arguing in a court filing that US TikTok users could be forc"}
                       </div>
                       <hr />
-                    </div>
+                    </Link>
                   )}
                 </>
               );

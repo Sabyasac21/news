@@ -1,9 +1,8 @@
 import React from 'react';
 import logo from '../../Assets/app_logo.jpg';
-import searchIcon from '../../Assets/search_icon.jpg'
 import './navbar.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { setCategory, setShowBackdrop } from '../../Redux/categorySlice';
+import {  setShowBackdrop } from '../../Redux/categorySlice';
 import nav_backdrop_icon from '../../Assets/nav_backdrop_icon.png';
 
 const Nav = () => {
