@@ -1,4 +1,4 @@
-import cors from 'cors'
+
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import FilterSections from "../FilterSections/FilterSections";
@@ -6,7 +6,8 @@ import Loader from "../Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 
 
-
+// pub_4697733ab14ad2eb8112d4c513b841aed555b
+// pub_46979f9018583c44b9a3d7368b78a6cbb3b1a
 
 import {
   setCategory,
@@ -21,10 +22,11 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
-  const apiKey = "863ff2729fdf4b37bc08dc0d6f94a342";
-  const url = `https://newsapi.org/v2/everything?q=${category}&page=${page}&pageSize=10&apiKey=${apiKey}`;
+  const apiKey = "pub_46979f9018583c44b9a3d7368b78a6cbb3b1a";
+  const url = `https://newsdata.io/api/1/news?apikey=${apiKey}&language=en&category=${category}`;
 
   const openBackdrop = useSelector((state) => state.category.showBackDrop);
+  let nextPage;
 
   const handleNextPage = () => {
     dispatch(setPage(page + 1));
@@ -62,7 +64,8 @@ const Home = () => {
         return response.json();
       })
       .then((data) => {
-        setNews(data.articles);
+        setNews(data.results);
+        console.log(data);
         setIsLoading(false);
       })
       .catch((error) => {
@@ -90,17 +93,17 @@ const Home = () => {
             news.map((n, i) => {
               return (
                 <>
-                  {n.urlToImage && (
+                  {(n.image_url&&n.description) && (
                     <div
                       className="news-card"
                       key={i}
-                      onClick={() => handleArticleClick(n.url)}
+                      onClick={() => handleArticleClick(n.link)}
                     >
                       <div className="title">{n.title}</div>
                       <div className="image-news">
-                        {n.urlToImage && <img src={n.urlToImage} alt="/" />}
+                        {n.image_url && <img src={n.image_url} alt="/" />}
                       </div>
-                      <div className="news-description">{n.description}</div>
+                      <div className="news-description">{n.description.slice(0, 200)}</div>
                       <hr />
                     </div>
                   )}
