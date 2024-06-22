@@ -1,4 +1,4 @@
-.news-container{
+.news-container {
     /* width: 70%; */
     background-color: rgb(244, 238, 238);
     padding: 3rem 0rem;
@@ -8,61 +8,65 @@
     position: relative;
 }
 
-.all-news{
+.all-news {
     width: 60%;
     background-color: rgb(245, 245, 251);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.title{
+.title {
     padding: 1rem 2rem;
     font-weight: 700;
     font-size: 50px;
     text-align: left;
 
 }
-.news-description{
- padding: 2rem 4rem;
- font-size: 30px;  
- text-align: left; 
- /* width: 70%; */
+
+.news-description {
+    padding: 2rem 4rem;
+    font-size: 30px;
+    text-align: left;
+    /* width: 70%; */
 }
-.news-card{
+
+.news-card {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.image-news{
+.image-news {
     height: 25rem;
     width: 40rem;
     /* margin-left: 7rem; */
-    
+
     padding: 60px 0;
-    
-    
+
+
 }
-.image-news img{
+
+.image-news img {
     height: 100%;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease-in-out;
-    
+
 }
 
-.image-news img:hover{
-    
+.image-news img:hover {
+
     transform: scale(1.05);
 }
-hr{
+
+hr {
     width: 80%;
     height: 2px;
     border: 2px solid pink;
-    border-radius:300%;
+    border-radius: 300%;
 }
 
-.filter-category{
+.filter-category {
     position: absolute;
     /* background-color: red; */
     display: block;
@@ -70,49 +74,50 @@ hr{
     /* width: 100%; */
 }
 
-.main-filter{
+.main-filter {
     position: relative;
     top: 50px;
     left: 10px;
 }
 
-.pagination{
+.pagination {
     display: flex;
     justify-content: center;
     margin: 1rem 0;
 
 }
 
-.next-page{
+.next-page {
     border: 1px solid grey;
     border-radius: 5px;
     padding: 5px 10px;
-    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-left: 1rem;
     font-weight: 600;
     cursor: pointer;
 }
 
-.prev-page{
+.prev-page {
     border: 1px solid grey;
     border-radius: 5px;
     padding: 5px 10px;
-    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-right: 1rem;
     font-weight: 600;
     cursor: pointer;
 }
-.page-num{
+
+.page-num {
     font-weight: 600;
 }
 
-.sticky-backdrop{
+.sticky-backdrop {
     position: sticky;
     top: 0;
     z-index: 50;
 }
 
-.backdrop{
+.backdrop {
     height: 100vh;
     width: 100vw;
     background-color: rgba(177, 174, 174, 0.8);
@@ -124,23 +129,26 @@ hr{
     /* display: none; */
 
 }
-.filter-wrapper{
+
+.filter-wrapper {
     height: 100%;
     width: 80%;
     background-color: white;
     /* display: none; */
     opacity: 1;
-    
+
 }
 
-.filter-list{
+.filter-list {
     text-align: left;
 
 }
-.filter-list h1{
-    color:  rgb(41, 3, 78);
+
+.filter-list h1 {
+    color: rgb(41, 3, 78);
 }
-.filter{
+
+.filter {
     font-size: 25px;
     font-weight: 600;
     list-style: none;
@@ -149,33 +157,60 @@ hr{
     border-radius: 2rem;
     background-color: rgba(243, 228, 228, 0.7);
     margin-bottom: 1rem;
-    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.filter:active{
+.filter:active {
     background-color: rgb(232, 154, 246);
 }
 
-@media (max-width: 500px){
-    .filter-category{
+.filter-list h1{
+    color: darkslategrey;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    gap: 5px;
+}
+
+.title_br hr{
+    border-color: rgb(40, 3, 40);
+    border-radius: 0;
+    height: 3px;
+    background-color: rgb(40, 3, 40);
+    width: 10rem;
+    
+}
+
+
+@media (max-width: 500px) {
+    .filter-category {
         display: none;
     }
 
-    .all-news{
+    .all-news {
         width: 95%;
     }
 
-    .title{
+    .title {
         font-size: 20px;
     }
 
-    .image-news{
+    .image-news {
         height: 10rem;
         width: 20rem;
         padding: 1px 0;
     }
-    .news-description{
+
+    .news-description {
         font-size: 18px;
         padding: 2rem 2rem;
+    }
+
+    .filter {
+        font-size: 20px;
+        font-weight: 600;
+        list-style: none;
+        padding: 1rem 1rem;
+        margin-right: 1rem;
+        width: 50%;
     }
 }

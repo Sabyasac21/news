@@ -38,10 +38,7 @@ const Home = () => {
     dispatch(setCategory(e.target.textContent));
     dispatch(setPage(1));
   };
-  // const handlePrevPage = () => {
-  //   if (page > 1) dispatch(setPage(page - 1));
-  // };
-
+  
   const handleArticleClick = (title) => {
     dispatch(setArticleTitle(title))
     window.scrollTo(0, 0)
@@ -63,8 +60,11 @@ const Home = () => {
       })
       .then((data) => {
         setNews(data.results);
+
+        // to amtch the article clicked and render on the detailed page
         localStorage.removeItem('articles')
         localStorage.setItem('articles', JSON.stringify(data.results))
+
         setNextPageUrl(data.nextPage);
         console.log(data);
         setIsLoading(false);
@@ -87,7 +87,10 @@ const Home = () => {
 
       <div className="news-container">
         <div className="all-news">
+          <div className="title_br">
           <h1>{category}</h1>
+          <hr/>
+          </div>
           {isLoading ? (
             <Loader />
           ) : (
@@ -119,11 +122,6 @@ const Home = () => {
             })
           )}
           <div className="pagination">
-            {/* <div className="prev-page" onClick={handlePrevPage}>
-              Prev
-            </div> */}
-
-            {/* <div className="page-num">{page}</div> */}
 
             <div className="next-page" onClick={handleNextPage}>
               Next
@@ -132,11 +130,12 @@ const Home = () => {
         </div>
       </div>
       <div className="sticky-backdrop">
+
         {openBackdrop && (
           <div className="backdrop" onClick={handleBackdropClose}>
             <div className="filter-wrapper" onClick={handleMobileCategory}>
               <ul className="filter-list">
-                <h1>Filter By:</h1>
+                <h1>Filter By</h1>
                 <li className="filter">Technology</li>
                 <li className="filter">Education</li>
                 <li className="filter">Entertainment</li>

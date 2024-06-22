@@ -3,7 +3,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 export const categorySlice = createSlice({
     name: 'category',
-    initialState: {category:'business', page:1, showBackDrop:false, articleTitle:''},
+    initialState: {category:'Business', page:1, showBackDrop:false, articleTitle:''},
     reducers: {
         setCategory: (state, action)=> {state.category = action.payload},
         setPage: (state, action)=> {state.page = action.payload},
